@@ -3,12 +3,13 @@
 #define SAT16_MAX 32767
 #define SAT16_MIN -32768
 
-static uint16_t contador = 0;
-
 uint16_t Cuenta_Accesos(void) {
+    static uint16_t contador = 0; // Declaración local y persistente
+    
     contador++;
     return contador;
 }
+
 
 int16_t Multiplicar_Sat(int16_t n1, int16_t n2) {
     int32_t resultado = (int32_t)n1 * (int32_t)n2;
